@@ -1,0 +1,27 @@
+server:
+  port: 8091
+  
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          azure:
+            provider: azure
+            client-id: 4979b3d1-46b1-4a85-8f59-f3b6277e7910
+            client-secret: JhD8Q~4jG5Vv516FltG-eHkRNQJtFF5RMtLQAcO2
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8091/login/oauth2/code/azure
+            client-name: CanaliChatbotManager_TST-SECRET
+            scope:
+              - openid
+              - profile
+              - email
+           
+        provider:
+          azure:
+            authorization-uri: https://login.microsoftonline.com/5240f297-b461-44d6-86ba-74c7496f3400/oauth2/v2.0/authorize
+            token-uri: https://login.microsoftonline.com/5240f297-b461-44d6-86ba-74c7496f3400/oauth2/v2.0/token
+            user-info-uri: https://graph.microsoft.com/oidc/userinfo
+            jwk-set-uri: https://login.microsoftonline.com/common/discovery/v2.0/keys
+            user-name-attribute: name
